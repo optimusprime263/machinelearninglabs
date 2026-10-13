@@ -1,0 +1,352 @@
+[1] train (1257, 64), test (540, 64), X range [0.0, 1.0], Y one-hot (1257, 10)
+    class counts train: [124, 127, 124, 128, 127, 127, 127, 125, 122, 126]
+    class counts test:  [54, 55, 53, 55, 54, 55, 54, 54, 52, 54]
+[2] W=16: shapes {'W1': (64, 16), 'b1': (16,), 'W2': (16, 16), 'b2': (16,), 'W3': (16, 10), 'b3': (10,)}, 1482 parameters
+[3] W=16: output (1257, 10), max |row sum - 1| = 3.33e-16
+[4] W=16: untrained loss = 2.3032 (ln 10 = 2.3026)
+[2] W=64: shapes {'W1': (64, 64), 'b1': (64,), 'W2': (64, 64), 'b2': (64,), 'W3': (64, 10), 'b3': (10,)}, 8970 parameters
+[3] W=64: output (1257, 10), max |row sum - 1| = 3.33e-16
+[4] W=64: untrained loss = 2.3128 (ln 10 = 2.3026)
+[5] gradient check
+    Width W=16: 10/10 weights pass (relative error < 1e-6, need >= 9)
+    param index            analytic      numerical  rel. error  ok
+    W2    (4, 9)       5.682565e-03   5.682565e-03    2.03e-09  yes
+    W3    (15, 2)      4.901350e-05   4.901353e-05    2.52e-07  yes
+    W2    (3, 9)      -3.037652e-04  -3.037652e-04    1.29e-08  yes
+    W3    (15, 1)     -3.717411e-03  -3.717411e-03    3.22e-09  yes
+    W1    (49, 8)     -2.178204e-04  -2.178204e-04    2.40e-08  yes
+    W3    (14, 5)      2.686898e-03   2.686898e-03    1.74e-10  yes
+    W2    (10, 4)     -2.138952e-04  -2.138952e-04    8.88e-09  yes
+    W3    (15, 7)      3.671761e-03   3.671761e-03    1.65e-09  yes
+    W2    (13, 4)     -7.749660e-06  -7.749668e-06    5.04e-07  yes
+    W2    (8, 11)     -1.447116e-03  -1.447116e-03    3.44e-09  yes
+    
+    Width W=64: 10/10 weights pass (relative error < 1e-6, need >= 9)
+    param index            analytic      numerical  rel. error  ok
+    W1    (13, 7)     -1.866239e-03  -1.866239e-03    5.73e-09  yes
+    W3    (29, 1)      2.074846e-04   2.074846e-04    4.50e-08  yes
+    W3    (15, 1)      1.186193e-03   1.186193e-03    8.44e-10  yes
+    W1    (20, 16)     2.560550e-05   2.560550e-05    7.19e-08  yes
+    W3    (3, 9)      -2.976977e-05  -2.976976e-05    5.03e-08  yes
+    W2    (15, 4)     -1.964341e-04  -1.964340e-04    1.84e-08  yes
+    W1    (62, 14)     1.185674e-03   1.185674e-03    2.34e-09  yes
+    W1    (17, 18)    -5.462153e-04  -5.462153e-04    1.01e-08  yes
+    W2    (3, 48)      1.607789e-04   1.607789e-04    2.07e-09  yes
+    W3    (21, 3)     -4.121882e-03  -4.121882e-03    2.30e-09  yes
+    
+W=16  lr=0.001  epoch  1/50  train_loss=2.3031  test_loss=2.3034  test_acc=0.1667
+W=16  lr=0.001  epoch  2/50  train_loss=2.3030  test_loss=2.3033  test_acc=0.1630
+W=16  lr=0.001  epoch  3/50  train_loss=2.3028  test_loss=2.3032  test_acc=0.1630
+W=16  lr=0.001  epoch  4/50  train_loss=2.3027  test_loss=2.3031  test_acc=0.1630
+W=16  lr=0.001  epoch  5/50  train_loss=2.3026  test_loss=2.3030  test_acc=0.1667
+W=16  lr=0.001  epoch  6/50  train_loss=2.3025  test_loss=2.3028  test_acc=0.1648
+W=16  lr=0.001  epoch  7/50  train_loss=2.3024  test_loss=2.3027  test_acc=0.1648
+W=16  lr=0.001  epoch  8/50  train_loss=2.3023  test_loss=2.3026  test_acc=0.1648
+W=16  lr=0.001  epoch  9/50  train_loss=2.3022  test_loss=2.3025  test_acc=0.1630
+W=16  lr=0.001  epoch 10/50  train_loss=2.3020  test_loss=2.3024  test_acc=0.1611
+W=16  lr=0.001  epoch 11/50  train_loss=2.3019  test_loss=2.3023  test_acc=0.1611
+W=16  lr=0.001  epoch 12/50  train_loss=2.3018  test_loss=2.3022  test_acc=0.1593
+W=16  lr=0.001  epoch 13/50  train_loss=2.3017  test_loss=2.3021  test_acc=0.1556
+W=16  lr=0.001  epoch 14/50  train_loss=2.3016  test_loss=2.3020  test_acc=0.1537
+W=16  lr=0.001  epoch 15/50  train_loss=2.3015  test_loss=2.3019  test_acc=0.1537
+W=16  lr=0.001  epoch 16/50  train_loss=2.3014  test_loss=2.3018  test_acc=0.1556
+W=16  lr=0.001  epoch 17/50  train_loss=2.3013  test_loss=2.3017  test_acc=0.1556
+W=16  lr=0.001  epoch 18/50  train_loss=2.3012  test_loss=2.3016  test_acc=0.1556
+W=16  lr=0.001  epoch 19/50  train_loss=2.3010  test_loss=2.3015  test_acc=0.1556
+W=16  lr=0.001  epoch 20/50  train_loss=2.3009  test_loss=2.3014  test_acc=0.1556
+W=16  lr=0.001  epoch 21/50  train_loss=2.3008  test_loss=2.3013  test_acc=0.1574
+W=16  lr=0.001  epoch 22/50  train_loss=2.3007  test_loss=2.3012  test_acc=0.1574
+W=16  lr=0.001  epoch 23/50  train_loss=2.3006  test_loss=2.3011  test_acc=0.1593
+W=16  lr=0.001  epoch 24/50  train_loss=2.3005  test_loss=2.3010  test_acc=0.1593
+W=16  lr=0.001  epoch 25/50  train_loss=2.3004  test_loss=2.3009  test_acc=0.1630
+W=16  lr=0.001  epoch 26/50  train_loss=2.3003  test_loss=2.3008  test_acc=0.1648
+W=16  lr=0.001  epoch 27/50  train_loss=2.3002  test_loss=2.3007  test_acc=0.1611
+W=16  lr=0.001  epoch 28/50  train_loss=2.3001  test_loss=2.3006  test_acc=0.1630
+W=16  lr=0.001  epoch 29/50  train_loss=2.2999  test_loss=2.3005  test_acc=0.1648
+W=16  lr=0.001  epoch 30/50  train_loss=2.2998  test_loss=2.3004  test_acc=0.1667
+W=16  lr=0.001  epoch 31/50  train_loss=2.2997  test_loss=2.3003  test_acc=0.1667
+W=16  lr=0.001  epoch 32/50  train_loss=2.2996  test_loss=2.3002  test_acc=0.1667
+W=16  lr=0.001  epoch 33/50  train_loss=2.2995  test_loss=2.3001  test_acc=0.1685
+W=16  lr=0.001  epoch 34/50  train_loss=2.2994  test_loss=2.3000  test_acc=0.1667
+W=16  lr=0.001  epoch 35/50  train_loss=2.2993  test_loss=2.2999  test_acc=0.1704
+W=16  lr=0.001  epoch 36/50  train_loss=2.2992  test_loss=2.2997  test_acc=0.1704
+W=16  lr=0.001  epoch 37/50  train_loss=2.2991  test_loss=2.2996  test_acc=0.1722
+W=16  lr=0.001  epoch 38/50  train_loss=2.2990  test_loss=2.2995  test_acc=0.1704
+W=16  lr=0.001  epoch 39/50  train_loss=2.2988  test_loss=2.2994  test_acc=0.1685
+W=16  lr=0.001  epoch 40/50  train_loss=2.2987  test_loss=2.2993  test_acc=0.1722
+W=16  lr=0.001  epoch 41/50  train_loss=2.2986  test_loss=2.2992  test_acc=0.1741
+W=16  lr=0.001  epoch 42/50  train_loss=2.2985  test_loss=2.2991  test_acc=0.1759
+W=16  lr=0.001  epoch 43/50  train_loss=2.2984  test_loss=2.2990  test_acc=0.1759
+W=16  lr=0.001  epoch 44/50  train_loss=2.2983  test_loss=2.2989  test_acc=0.1759
+W=16  lr=0.001  epoch 45/50  train_loss=2.2982  test_loss=2.2988  test_acc=0.1759
+W=16  lr=0.001  epoch 46/50  train_loss=2.2981  test_loss=2.2987  test_acc=0.1778
+W=16  lr=0.001  epoch 47/50  train_loss=2.2980  test_loss=2.2986  test_acc=0.1815
+W=16  lr=0.001  epoch 48/50  train_loss=2.2978  test_loss=2.2985  test_acc=0.1815
+W=16  lr=0.001  epoch 49/50  train_loss=2.2977  test_loss=2.2984  test_acc=0.1815
+W=16  lr=0.001  epoch 50/50  train_loss=2.2976  test_loss=2.2983  test_acc=0.1833
+W=16  lr=0.01   epoch  1/50  train_loss=2.3020  test_loss=2.3024  test_acc=0.1593
+W=16  lr=0.01   epoch  2/50  train_loss=2.3009  test_loss=2.3014  test_acc=0.1519
+W=16  lr=0.01   epoch  3/50  train_loss=2.2998  test_loss=2.3004  test_acc=0.1648
+W=16  lr=0.01   epoch  4/50  train_loss=2.2987  test_loss=2.2993  test_acc=0.1667
+W=16  lr=0.01   epoch  5/50  train_loss=2.2976  test_loss=2.2983  test_acc=0.1722
+W=16  lr=0.01   epoch  6/50  train_loss=2.2965  test_loss=2.2972  test_acc=0.1759
+W=16  lr=0.01   epoch  7/50  train_loss=2.2952  test_loss=2.2960  test_acc=0.1796
+W=16  lr=0.01   epoch  8/50  train_loss=2.2939  test_loss=2.2948  test_acc=0.1833
+W=16  lr=0.01   epoch  9/50  train_loss=2.2926  test_loss=2.2935  test_acc=0.1907
+W=16  lr=0.01   epoch 10/50  train_loss=2.2911  test_loss=2.2921  test_acc=0.1944
+W=16  lr=0.01   epoch 11/50  train_loss=2.2896  test_loss=2.2906  test_acc=0.1833
+W=16  lr=0.01   epoch 12/50  train_loss=2.2879  test_loss=2.2890  test_acc=0.1907
+W=16  lr=0.01   epoch 13/50  train_loss=2.2861  test_loss=2.2872  test_acc=0.1889
+W=16  lr=0.01   epoch 14/50  train_loss=2.2841  test_loss=2.2853  test_acc=0.1963
+W=16  lr=0.01   epoch 15/50  train_loss=2.2819  test_loss=2.2832  test_acc=0.2037
+W=16  lr=0.01   epoch 16/50  train_loss=2.2794  test_loss=2.2808  test_acc=0.1889
+W=16  lr=0.01   epoch 17/50  train_loss=2.2766  test_loss=2.2781  test_acc=0.1889
+W=16  lr=0.01   epoch 18/50  train_loss=2.2736  test_loss=2.2752  test_acc=0.2000
+W=16  lr=0.01   epoch 19/50  train_loss=2.2702  test_loss=2.2719  test_acc=0.2093
+W=16  lr=0.01   epoch 20/50  train_loss=2.2664  test_loss=2.2682  test_acc=0.2204
+W=16  lr=0.01   epoch 21/50  train_loss=2.2622  test_loss=2.2641  test_acc=0.2259
+W=16  lr=0.01   epoch 22/50  train_loss=2.2574  test_loss=2.2594  test_acc=0.2389
+W=16  lr=0.01   epoch 23/50  train_loss=2.2520  test_loss=2.2541  test_acc=0.2444
+W=16  lr=0.01   epoch 24/50  train_loss=2.2459  test_loss=2.2481  test_acc=0.2685
+W=16  lr=0.01   epoch 25/50  train_loss=2.2388  test_loss=2.2411  test_acc=0.2870
+W=16  lr=0.01   epoch 26/50  train_loss=2.2308  test_loss=2.2333  test_acc=0.2926
+W=16  lr=0.01   epoch 27/50  train_loss=2.2217  test_loss=2.2244  test_acc=0.3056
+W=16  lr=0.01   epoch 28/50  train_loss=2.2112  test_loss=2.2142  test_acc=0.3093
+W=16  lr=0.01   epoch 29/50  train_loss=2.1993  test_loss=2.2026  test_acc=0.3130
+W=16  lr=0.01   epoch 30/50  train_loss=2.1857  test_loss=2.1893  test_acc=0.3185
+W=16  lr=0.01   epoch 31/50  train_loss=2.1703  test_loss=2.1740  test_acc=0.3278
+W=16  lr=0.01   epoch 32/50  train_loss=2.1522  test_loss=2.1562  test_acc=0.3278
+W=16  lr=0.01   epoch 33/50  train_loss=2.1319  test_loss=2.1361  test_acc=0.3426
+W=16  lr=0.01   epoch 34/50  train_loss=2.1084  test_loss=2.1130  test_acc=0.3407
+W=16  lr=0.01   epoch 35/50  train_loss=2.0820  test_loss=2.0869  test_acc=0.3481
+W=16  lr=0.01   epoch 36/50  train_loss=2.0520  test_loss=2.0572  test_acc=0.3556
+W=16  lr=0.01   epoch 37/50  train_loss=2.0187  test_loss=2.0239  test_acc=0.3704
+W=16  lr=0.01   epoch 38/50  train_loss=1.9819  test_loss=1.9874  test_acc=0.3833
+W=16  lr=0.01   epoch 39/50  train_loss=1.9420  test_loss=1.9480  test_acc=0.3944
+W=16  lr=0.01   epoch 40/50  train_loss=1.8986  test_loss=1.9049  test_acc=0.3907
+W=16  lr=0.01   epoch 41/50  train_loss=1.8531  test_loss=1.8596  test_acc=0.4222
+W=16  lr=0.01   epoch 42/50  train_loss=1.8055  test_loss=1.8124  test_acc=0.4296
+W=16  lr=0.01   epoch 43/50  train_loss=1.7561  test_loss=1.7637  test_acc=0.4333
+W=16  lr=0.01   epoch 44/50  train_loss=1.7060  test_loss=1.7139  test_acc=0.4611
+W=16  lr=0.01   epoch 45/50  train_loss=1.6548  test_loss=1.6635  test_acc=0.4796
+W=16  lr=0.01   epoch 46/50  train_loss=1.6040  test_loss=1.6132  test_acc=0.5352
+W=16  lr=0.01   epoch 47/50  train_loss=1.5527  test_loss=1.5631  test_acc=0.5630
+W=16  lr=0.01   epoch 48/50  train_loss=1.5024  test_loss=1.5135  test_acc=0.6019
+W=16  lr=0.01   epoch 49/50  train_loss=1.4542  test_loss=1.4670  test_acc=0.6222
+W=16  lr=0.01   epoch 50/50  train_loss=1.4072  test_loss=1.4214  test_acc=0.6315
+W=16  lr=0.1    epoch  1/50  train_loss=2.2916  test_loss=2.2925  test_acc=0.1370
+W=16  lr=0.1    epoch  2/50  train_loss=2.2686  test_loss=2.2702  test_acc=0.2463
+W=16  lr=0.1    epoch  3/50  train_loss=2.1939  test_loss=2.1970  test_acc=0.3241
+W=16  lr=0.1    epoch  4/50  train_loss=1.9394  test_loss=1.9440  test_acc=0.4148
+W=16  lr=0.1    epoch  5/50  train_loss=1.4794  test_loss=1.4942  test_acc=0.5111
+W=16  lr=0.1    epoch  6/50  train_loss=1.1810  test_loss=1.2180  test_acc=0.5889
+W=16  lr=0.1    epoch  7/50  train_loss=0.9362  test_loss=0.9766  test_acc=0.6907
+W=16  lr=0.1    epoch  8/50  train_loss=0.7685  test_loss=0.8100  test_acc=0.7259
+W=16  lr=0.1    epoch  9/50  train_loss=0.6587  test_loss=0.7043  test_acc=0.7833
+W=16  lr=0.1    epoch 10/50  train_loss=0.6290  test_loss=0.6495  test_acc=0.7889
+W=16  lr=0.1    epoch 11/50  train_loss=0.4596  test_loss=0.5020  test_acc=0.8278
+W=16  lr=0.1    epoch 12/50  train_loss=0.3718  test_loss=0.4185  test_acc=0.8407
+W=16  lr=0.1    epoch 13/50  train_loss=0.7004  test_loss=0.7232  test_acc=0.7370
+W=16  lr=0.1    epoch 14/50  train_loss=0.2851  test_loss=0.3451  test_acc=0.8833
+W=16  lr=0.1    epoch 15/50  train_loss=0.3542  test_loss=0.4093  test_acc=0.8667
+W=16  lr=0.1    epoch 16/50  train_loss=0.2229  test_loss=0.2725  test_acc=0.9241
+W=16  lr=0.1    epoch 17/50  train_loss=0.3424  test_loss=0.3990  test_acc=0.8630
+W=16  lr=0.1    epoch 18/50  train_loss=0.1590  test_loss=0.2198  test_acc=0.9370
+W=16  lr=0.1    epoch 19/50  train_loss=0.2703  test_loss=0.3155  test_acc=0.8907
+W=16  lr=0.1    epoch 20/50  train_loss=0.1889  test_loss=0.2361  test_acc=0.9222
+W=16  lr=0.1    epoch 21/50  train_loss=0.1365  test_loss=0.1995  test_acc=0.9370
+W=16  lr=0.1    epoch 22/50  train_loss=0.1545  test_loss=0.2180  test_acc=0.9259
+W=16  lr=0.1    epoch 23/50  train_loss=0.1300  test_loss=0.1864  test_acc=0.9537
+W=16  lr=0.1    epoch 24/50  train_loss=0.1042  test_loss=0.1756  test_acc=0.9537
+W=16  lr=0.1    epoch 25/50  train_loss=0.2425  test_loss=0.3327  test_acc=0.9037
+W=16  lr=0.1    epoch 26/50  train_loss=0.1071  test_loss=0.1791  test_acc=0.9426
+W=16  lr=0.1    epoch 27/50  train_loss=0.1036  test_loss=0.1800  test_acc=0.9407
+W=16  lr=0.1    epoch 28/50  train_loss=0.1035  test_loss=0.1874  test_acc=0.9463
+W=16  lr=0.1    epoch 29/50  train_loss=0.0887  test_loss=0.1683  test_acc=0.9556
+W=16  lr=0.1    epoch 30/50  train_loss=0.0815  test_loss=0.1666  test_acc=0.9500
+W=16  lr=0.1    epoch 31/50  train_loss=0.0742  test_loss=0.1663  test_acc=0.9519
+W=16  lr=0.1    epoch 32/50  train_loss=0.0738  test_loss=0.1652  test_acc=0.9463
+W=16  lr=0.1    epoch 33/50  train_loss=0.0712  test_loss=0.1556  test_acc=0.9556
+W=16  lr=0.1    epoch 34/50  train_loss=0.0861  test_loss=0.1782  test_acc=0.9481
+W=16  lr=0.1    epoch 35/50  train_loss=0.0937  test_loss=0.1928  test_acc=0.9426
+W=16  lr=0.1    epoch 36/50  train_loss=0.0626  test_loss=0.1613  test_acc=0.9519
+W=16  lr=0.1    epoch 37/50  train_loss=0.0661  test_loss=0.1533  test_acc=0.9519
+W=16  lr=0.1    epoch 38/50  train_loss=0.0614  test_loss=0.1511  test_acc=0.9574
+W=16  lr=0.1    epoch 39/50  train_loss=0.2243  test_loss=0.3895  test_acc=0.8778
+W=16  lr=0.1    epoch 40/50  train_loss=0.0472  test_loss=0.1508  test_acc=0.9611
+W=16  lr=0.1    epoch 41/50  train_loss=0.0457  test_loss=0.1441  test_acc=0.9593
+W=16  lr=0.1    epoch 42/50  train_loss=0.0460  test_loss=0.1552  test_acc=0.9630
+W=16  lr=0.1    epoch 43/50  train_loss=0.0426  test_loss=0.1410  test_acc=0.9611
+W=16  lr=0.1    epoch 44/50  train_loss=0.0462  test_loss=0.1622  test_acc=0.9593
+W=16  lr=0.1    epoch 45/50  train_loss=0.0364  test_loss=0.1394  test_acc=0.9593
+W=16  lr=0.1    epoch 46/50  train_loss=0.0465  test_loss=0.1532  test_acc=0.9630
+W=16  lr=0.1    epoch 47/50  train_loss=0.0386  test_loss=0.1529  test_acc=0.9593
+W=16  lr=0.1    epoch 48/50  train_loss=0.0665  test_loss=0.1921  test_acc=0.9315
+W=16  lr=0.1    epoch 49/50  train_loss=0.0691  test_loss=0.2073  test_acc=0.9259
+W=16  lr=0.1    epoch 50/50  train_loss=0.0342  test_loss=0.1534  test_acc=0.9556
+W=64  lr=0.001  epoch  1/50  train_loss=2.3111  test_loss=2.3120  test_acc=0.0963
+W=64  lr=0.001  epoch  2/50  train_loss=2.3095  test_loss=2.3104  test_acc=0.1037
+W=64  lr=0.001  epoch  3/50  train_loss=2.3078  test_loss=2.3087  test_acc=0.1037
+W=64  lr=0.001  epoch  4/50  train_loss=2.3062  test_loss=2.3071  test_acc=0.1111
+W=64  lr=0.001  epoch  5/50  train_loss=2.3045  test_loss=2.3055  test_acc=0.1222
+W=64  lr=0.001  epoch  6/50  train_loss=2.3029  test_loss=2.3039  test_acc=0.1241
+W=64  lr=0.001  epoch  7/50  train_loss=2.3013  test_loss=2.3023  test_acc=0.1352
+W=64  lr=0.001  epoch  8/50  train_loss=2.2996  test_loss=2.3007  test_acc=0.1389
+W=64  lr=0.001  epoch  9/50  train_loss=2.2980  test_loss=2.2991  test_acc=0.1407
+W=64  lr=0.001  epoch 10/50  train_loss=2.2964  test_loss=2.2975  test_acc=0.1463
+W=64  lr=0.001  epoch 11/50  train_loss=2.2948  test_loss=2.2959  test_acc=0.1500
+W=64  lr=0.001  epoch 12/50  train_loss=2.2932  test_loss=2.2944  test_acc=0.1500
+W=64  lr=0.001  epoch 13/50  train_loss=2.2916  test_loss=2.2928  test_acc=0.1519
+W=64  lr=0.001  epoch 14/50  train_loss=2.2900  test_loss=2.2913  test_acc=0.1537
+W=64  lr=0.001  epoch 15/50  train_loss=2.2885  test_loss=2.2897  test_acc=0.1593
+W=64  lr=0.001  epoch 16/50  train_loss=2.2869  test_loss=2.2882  test_acc=0.1611
+W=64  lr=0.001  epoch 17/50  train_loss=2.2853  test_loss=2.2867  test_acc=0.1611
+W=64  lr=0.001  epoch 18/50  train_loss=2.2837  test_loss=2.2851  test_acc=0.1685
+W=64  lr=0.001  epoch 19/50  train_loss=2.2822  test_loss=2.2836  test_acc=0.1759
+W=64  lr=0.001  epoch 20/50  train_loss=2.2806  test_loss=2.2820  test_acc=0.1852
+W=64  lr=0.001  epoch 21/50  train_loss=2.2790  test_loss=2.2805  test_acc=0.1889
+W=64  lr=0.001  epoch 22/50  train_loss=2.2774  test_loss=2.2789  test_acc=0.1889
+W=64  lr=0.001  epoch 23/50  train_loss=2.2758  test_loss=2.2774  test_acc=0.1889
+W=64  lr=0.001  epoch 24/50  train_loss=2.2742  test_loss=2.2758  test_acc=0.1944
+W=64  lr=0.001  epoch 25/50  train_loss=2.2726  test_loss=2.2743  test_acc=0.1981
+W=64  lr=0.001  epoch 26/50  train_loss=2.2710  test_loss=2.2727  test_acc=0.2037
+W=64  lr=0.001  epoch 27/50  train_loss=2.2694  test_loss=2.2711  test_acc=0.2056
+W=64  lr=0.001  epoch 28/50  train_loss=2.2678  test_loss=2.2695  test_acc=0.2093
+W=64  lr=0.001  epoch 29/50  train_loss=2.2661  test_loss=2.2679  test_acc=0.2167
+W=64  lr=0.001  epoch 30/50  train_loss=2.2645  test_loss=2.2663  test_acc=0.2259
+W=64  lr=0.001  epoch 31/50  train_loss=2.2628  test_loss=2.2646  test_acc=0.2352
+W=64  lr=0.001  epoch 32/50  train_loss=2.2612  test_loss=2.2630  test_acc=0.2370
+W=64  lr=0.001  epoch 33/50  train_loss=2.2595  test_loss=2.2614  test_acc=0.2426
+W=64  lr=0.001  epoch 34/50  train_loss=2.2578  test_loss=2.2597  test_acc=0.2481
+W=64  lr=0.001  epoch 35/50  train_loss=2.2561  test_loss=2.2580  test_acc=0.2593
+W=64  lr=0.001  epoch 36/50  train_loss=2.2544  test_loss=2.2564  test_acc=0.2630
+W=64  lr=0.001  epoch 37/50  train_loss=2.2527  test_loss=2.2547  test_acc=0.2667
+W=64  lr=0.001  epoch 38/50  train_loss=2.2510  test_loss=2.2530  test_acc=0.2704
+W=64  lr=0.001  epoch 39/50  train_loss=2.2493  test_loss=2.2513  test_acc=0.2741
+W=64  lr=0.001  epoch 40/50  train_loss=2.2475  test_loss=2.2496  test_acc=0.2759
+W=64  lr=0.001  epoch 41/50  train_loss=2.2458  test_loss=2.2478  test_acc=0.2833
+W=64  lr=0.001  epoch 42/50  train_loss=2.2440  test_loss=2.2461  test_acc=0.2944
+W=64  lr=0.001  epoch 43/50  train_loss=2.2422  test_loss=2.2443  test_acc=0.3000
+W=64  lr=0.001  epoch 44/50  train_loss=2.2404  test_loss=2.2425  test_acc=0.3167
+W=64  lr=0.001  epoch 45/50  train_loss=2.2385  test_loss=2.2407  test_acc=0.3241
+W=64  lr=0.001  epoch 46/50  train_loss=2.2367  test_loss=2.2389  test_acc=0.3296
+W=64  lr=0.001  epoch 47/50  train_loss=2.2348  test_loss=2.2370  test_acc=0.3315
+W=64  lr=0.001  epoch 48/50  train_loss=2.2329  test_loss=2.2351  test_acc=0.3444
+W=64  lr=0.001  epoch 49/50  train_loss=2.2310  test_loss=2.2333  test_acc=0.3500
+W=64  lr=0.001  epoch 50/50  train_loss=2.2291  test_loss=2.2314  test_acc=0.3593
+W=64  lr=0.01   epoch  1/50  train_loss=2.2962  test_loss=2.2974  test_acc=0.1444
+W=64  lr=0.01   epoch  2/50  train_loss=2.2806  test_loss=2.2820  test_acc=0.1704
+W=64  lr=0.01   epoch  3/50  train_loss=2.2646  test_loss=2.2664  test_acc=0.2278
+W=64  lr=0.01   epoch  4/50  train_loss=2.2478  test_loss=2.2497  test_acc=0.2741
+W=64  lr=0.01   epoch  5/50  train_loss=2.2294  test_loss=2.2316  test_acc=0.3722
+W=64  lr=0.01   epoch  6/50  train_loss=2.2089  test_loss=2.2115  test_acc=0.4185
+W=64  lr=0.01   epoch  7/50  train_loss=2.1860  test_loss=2.1888  test_acc=0.4611
+W=64  lr=0.01   epoch  8/50  train_loss=2.1600  test_loss=2.1632  test_acc=0.5222
+W=64  lr=0.01   epoch  9/50  train_loss=2.1301  test_loss=2.1339  test_acc=0.5778
+W=64  lr=0.01   epoch 10/50  train_loss=2.0961  test_loss=2.1004  test_acc=0.6037
+W=64  lr=0.01   epoch 11/50  train_loss=2.0575  test_loss=2.0622  test_acc=0.6333
+W=64  lr=0.01   epoch 12/50  train_loss=2.0139  test_loss=2.0189  test_acc=0.6648
+W=64  lr=0.01   epoch 13/50  train_loss=1.9641  test_loss=1.9697  test_acc=0.6630
+W=64  lr=0.01   epoch 14/50  train_loss=1.9074  test_loss=1.9137  test_acc=0.6907
+W=64  lr=0.01   epoch 15/50  train_loss=1.8441  test_loss=1.8510  test_acc=0.7167
+W=64  lr=0.01   epoch 16/50  train_loss=1.7737  test_loss=1.7812  test_acc=0.7241
+W=64  lr=0.01   epoch 17/50  train_loss=1.6963  test_loss=1.7041  test_acc=0.7593
+W=64  lr=0.01   epoch 18/50  train_loss=1.6122  test_loss=1.6205  test_acc=0.7630
+W=64  lr=0.01   epoch 19/50  train_loss=1.5232  test_loss=1.5323  test_acc=0.7778
+W=64  lr=0.01   epoch 20/50  train_loss=1.4315  test_loss=1.4414  test_acc=0.7870
+W=64  lr=0.01   epoch 21/50  train_loss=1.3393  test_loss=1.3502  test_acc=0.7963
+W=64  lr=0.01   epoch 22/50  train_loss=1.2486  test_loss=1.2611  test_acc=0.7944
+W=64  lr=0.01   epoch 23/50  train_loss=1.1619  test_loss=1.1750  test_acc=0.7889
+W=64  lr=0.01   epoch 24/50  train_loss=1.0780  test_loss=1.0924  test_acc=0.8167
+W=64  lr=0.01   epoch 25/50  train_loss=1.0006  test_loss=1.0164  test_acc=0.8352
+W=64  lr=0.01   epoch 26/50  train_loss=0.9298  test_loss=0.9469  test_acc=0.8407
+W=64  lr=0.01   epoch 27/50  train_loss=0.8665  test_loss=0.8858  test_acc=0.8370
+W=64  lr=0.01   epoch 28/50  train_loss=0.8080  test_loss=0.8278  test_acc=0.8463
+W=64  lr=0.01   epoch 29/50  train_loss=0.7553  test_loss=0.7761  test_acc=0.8574
+W=64  lr=0.01   epoch 30/50  train_loss=0.7086  test_loss=0.7299  test_acc=0.8593
+W=64  lr=0.01   epoch 31/50  train_loss=0.6670  test_loss=0.6898  test_acc=0.8593
+W=64  lr=0.01   epoch 32/50  train_loss=0.6285  test_loss=0.6525  test_acc=0.8778
+W=64  lr=0.01   epoch 33/50  train_loss=0.5941  test_loss=0.6192  test_acc=0.8778
+W=64  lr=0.01   epoch 34/50  train_loss=0.5622  test_loss=0.5895  test_acc=0.8796
+W=64  lr=0.01   epoch 35/50  train_loss=0.5345  test_loss=0.5627  test_acc=0.8815
+W=64  lr=0.01   epoch 36/50  train_loss=0.5105  test_loss=0.5395  test_acc=0.8796
+W=64  lr=0.01   epoch 37/50  train_loss=0.4864  test_loss=0.5152  test_acc=0.8870
+W=64  lr=0.01   epoch 38/50  train_loss=0.4634  test_loss=0.4932  test_acc=0.8852
+W=64  lr=0.01   epoch 39/50  train_loss=0.4429  test_loss=0.4738  test_acc=0.8926
+W=64  lr=0.01   epoch 40/50  train_loss=0.4265  test_loss=0.4581  test_acc=0.8944
+W=64  lr=0.01   epoch 41/50  train_loss=0.4078  test_loss=0.4394  test_acc=0.8963
+W=64  lr=0.01   epoch 42/50  train_loss=0.3919  test_loss=0.4242  test_acc=0.8963
+W=64  lr=0.01   epoch 43/50  train_loss=0.3794  test_loss=0.4123  test_acc=0.8944
+W=64  lr=0.01   epoch 44/50  train_loss=0.3644  test_loss=0.3988  test_acc=0.8963
+W=64  lr=0.01   epoch 45/50  train_loss=0.3516  test_loss=0.3853  test_acc=0.9019
+W=64  lr=0.01   epoch 46/50  train_loss=0.3417  test_loss=0.3754  test_acc=0.9130
+W=64  lr=0.01   epoch 47/50  train_loss=0.3284  test_loss=0.3626  test_acc=0.9093
+W=64  lr=0.01   epoch 48/50  train_loss=0.3195  test_loss=0.3546  test_acc=0.9093
+W=64  lr=0.01   epoch 49/50  train_loss=0.3097  test_loss=0.3451  test_acc=0.9167
+W=64  lr=0.01   epoch 50/50  train_loss=0.3002  test_loss=0.3354  test_acc=0.9204
+W=64  lr=0.1    epoch  1/50  train_loss=2.1054  test_loss=2.1090  test_acc=0.4852
+W=64  lr=0.1    epoch  2/50  train_loss=1.5072  test_loss=1.5151  test_acc=0.6426
+W=64  lr=0.1    epoch  3/50  train_loss=0.8366  test_loss=0.8514  test_acc=0.7833
+W=64  lr=0.1    epoch  4/50  train_loss=0.4658  test_loss=0.4992  test_acc=0.8889
+W=64  lr=0.1    epoch  5/50  train_loss=0.3631  test_loss=0.4088  test_acc=0.8778
+W=64  lr=0.1    epoch  6/50  train_loss=0.2524  test_loss=0.2822  test_acc=0.9333
+W=64  lr=0.1    epoch  7/50  train_loss=0.2333  test_loss=0.2765  test_acc=0.9167
+W=64  lr=0.1    epoch  8/50  train_loss=0.2968  test_loss=0.3357  test_acc=0.8741
+W=64  lr=0.1    epoch  9/50  train_loss=0.1546  test_loss=0.2039  test_acc=0.9444
+W=64  lr=0.1    epoch 10/50  train_loss=0.1789  test_loss=0.2310  test_acc=0.9296
+W=64  lr=0.1    epoch 11/50  train_loss=0.1442  test_loss=0.1856  test_acc=0.9444
+W=64  lr=0.1    epoch 12/50  train_loss=0.1249  test_loss=0.1833  test_acc=0.9519
+W=64  lr=0.1    epoch 13/50  train_loss=0.1598  test_loss=0.2070  test_acc=0.9389
+W=64  lr=0.1    epoch 14/50  train_loss=0.0988  test_loss=0.1597  test_acc=0.9481
+W=64  lr=0.1    epoch 15/50  train_loss=0.3576  test_loss=0.4300  test_acc=0.8426
+W=64  lr=0.1    epoch 16/50  train_loss=0.0954  test_loss=0.1579  test_acc=0.9556
+W=64  lr=0.1    epoch 17/50  train_loss=0.0741  test_loss=0.1408  test_acc=0.9611
+W=64  lr=0.1    epoch 18/50  train_loss=0.0719  test_loss=0.1539  test_acc=0.9556
+W=64  lr=0.1    epoch 19/50  train_loss=0.2308  test_loss=0.3180  test_acc=0.9093
+W=64  lr=0.1    epoch 20/50  train_loss=0.0894  test_loss=0.1650  test_acc=0.9389
+W=64  lr=0.1    epoch 21/50  train_loss=0.0600  test_loss=0.1253  test_acc=0.9593
+W=64  lr=0.1    epoch 22/50  train_loss=0.0502  test_loss=0.1254  test_acc=0.9648
+W=64  lr=0.1    epoch 23/50  train_loss=0.0545  test_loss=0.1260  test_acc=0.9611
+W=64  lr=0.1    epoch 24/50  train_loss=0.0450  test_loss=0.1282  test_acc=0.9704
+W=64  lr=0.1    epoch 25/50  train_loss=0.0423  test_loss=0.1260  test_acc=0.9648
+W=64  lr=0.1    epoch 26/50  train_loss=0.0384  test_loss=0.1171  test_acc=0.9685
+W=64  lr=0.1    epoch 27/50  train_loss=0.1215  test_loss=0.1926  test_acc=0.9352
+W=64  lr=0.1    epoch 28/50  train_loss=0.0357  test_loss=0.1270  test_acc=0.9593
+W=64  lr=0.1    epoch 29/50  train_loss=0.0322  test_loss=0.1160  test_acc=0.9704
+W=64  lr=0.1    epoch 30/50  train_loss=0.0341  test_loss=0.1244  test_acc=0.9593
+W=64  lr=0.1    epoch 31/50  train_loss=0.0323  test_loss=0.1181  test_acc=0.9630
+W=64  lr=0.1    epoch 32/50  train_loss=0.0292  test_loss=0.1245  test_acc=0.9556
+W=64  lr=0.1    epoch 33/50  train_loss=0.0278  test_loss=0.1245  test_acc=0.9685
+W=64  lr=0.1    epoch 34/50  train_loss=0.0253  test_loss=0.1159  test_acc=0.9648
+W=64  lr=0.1    epoch 35/50  train_loss=0.0269  test_loss=0.1293  test_acc=0.9537
+W=64  lr=0.1    epoch 36/50  train_loss=0.0243  test_loss=0.1129  test_acc=0.9667
+W=64  lr=0.1    epoch 37/50  train_loss=0.0349  test_loss=0.1307  test_acc=0.9500
+W=64  lr=0.1    epoch 38/50  train_loss=0.0242  test_loss=0.1217  test_acc=0.9611
+W=64  lr=0.1    epoch 39/50  train_loss=0.0209  test_loss=0.1206  test_acc=0.9648
+W=64  lr=0.1    epoch 40/50  train_loss=0.0207  test_loss=0.1186  test_acc=0.9685
+W=64  lr=0.1    epoch 41/50  train_loss=0.0193  test_loss=0.1164  test_acc=0.9667
+W=64  lr=0.1    epoch 42/50  train_loss=0.0188  test_loss=0.1177  test_acc=0.9630
+W=64  lr=0.1    epoch 43/50  train_loss=0.0357  test_loss=0.1414  test_acc=0.9593
+W=64  lr=0.1    epoch 44/50  train_loss=0.0176  test_loss=0.1203  test_acc=0.9722
+W=64  lr=0.1    epoch 45/50  train_loss=0.0151  test_loss=0.1174  test_acc=0.9667
+W=64  lr=0.1    epoch 46/50  train_loss=0.0163  test_loss=0.1251  test_acc=0.9611
+W=64  lr=0.1    epoch 47/50  train_loss=0.0145  test_loss=0.1191  test_acc=0.9704
+W=64  lr=0.1    epoch 48/50  train_loss=0.0143  test_loss=0.1244  test_acc=0.9648
+W=64  lr=0.1    epoch 49/50  train_loss=0.0139  test_loss=0.1182  test_acc=0.9741
+W=64  lr=0.1    epoch 50/50  train_loss=0.0145  test_loss=0.1145  test_acc=0.9667
+[6] final results
+    | Width W | Learning rate | Final train loss | Final test loss | Final test accuracy |
+    |---|---|---|---|---|
+    | 16 | 0.001 | 2.2976 | 2.2983 | 18.33% |
+    | 16 | 0.01 | 1.4072 | 1.4214 | 63.15% |
+    | 16 | 0.1 | 0.0342 | 0.1534 | 95.56% |
+    | 64 | 0.001 | 2.2291 | 2.2314 | 35.93% |
+    | 64 | 0.01 | 0.3002 | 0.3354 | 92.04% |
+    | 64 | 0.1 | 0.0145 | 0.1145 | 96.67% |
+[7] timing (median of 100 runs)
+    | Width W | Batch | Forward (ms) | Backward (ms) | Backward / forward | Forward matmuls (ms, share) | Backward matmuls (ms, share) | Forward MFLOP | Backward MFLOP |
+    |---|---|---|---|---|---|---|---|---|
+    | 16 | 32 | 0.0329 | 0.0367 | 1.12 | 0.0106 (32%) | 0.0161 (44%) | 0.09 | 0.12 |
+    | 16 | 1257 (full train) | 0.5475 | 0.5248 | 0.96 | 0.2645 (48%) | 0.2729 (52%) | 3.62 | 4.67 |
+    | 64 | 32 | 0.0518 | 0.0681 | 1.32 | 0.0263 (51%) | 0.0424 (62%) | 0.57 | 0.87 |
+    | 64 | 1257 (full train) | 1.2866 | 1.6283 | 1.27 | 0.5695 (44%) | 0.8636 (53%) | 22.20 | 34.11 |
