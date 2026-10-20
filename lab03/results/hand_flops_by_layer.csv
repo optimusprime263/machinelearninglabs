@@ -1,0 +1,19 @@
+model,layer,flops
+MLP,Linear 784→256,401408
+MLP,Linear 256→128,65536
+MLP,Linear 128→10,2560
+CNN,"Conv2d 1→16, 28×28",225792
+CNN,"Conv2d 16→32, 14×14",1806336
+CNN,Linear 1568→10,31360
+Attention,patch embedding 49→64,100352
+Attention,encoder layer 1: QKV projections,393216
+Attention,encoder layer 1: scores Q·Kᵀ,32768
+Attention,encoder layer 1: weighted sum A·V,32768
+Attention,encoder layer 1: output projection,131072
+Attention,encoder layer 1: feed-forward,524288
+Attention,encoder layer 2: QKV projections,393216
+Attention,encoder layer 2: scores Q·Kᵀ,32768
+Attention,encoder layer 2: weighted sum A·V,32768
+Attention,encoder layer 2: output projection,131072
+Attention,encoder layer 2: feed-forward,524288
+Attention,Linear 64→10,1280

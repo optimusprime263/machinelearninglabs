@@ -30,3 +30,17 @@ See `lab02/report.md` for the results and limitations.
 
 `print_versions.py` lists every course package. In an environment with only the
 three Lab 2 dependencies, other course packages can be reported as missing.
+
+## Lab 3: architectures and their costs
+
+MLP, CNN and a small patch-attention model trained on Fashion-MNIST in PyTorch,
+compared by accuracy, parameters, FLOPs and inference latency. Fashion-MNIST
+is downloaded to `data/` on the first run (the folder is not committed).
+
+```powershell
+python lab03/src/print_versions.py
+python lab03/src/lab3.py
+```
+
+Results, plots and the FLOP comparison are written to `lab03/results/`.
+See `lab03/report.md`.

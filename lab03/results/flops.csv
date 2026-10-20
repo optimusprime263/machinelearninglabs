@@ -1,0 +1,4 @@
+model,hand_flops,thop_macs,thop_macs_x2,thop_macs_fastpath_off,torch_flop_counter
+MLP,469504,234752,469504,234752,469504
+CNN,2063488,1031744,2063488,1031744,2063488
+Attention,2329856,50816,101632,591488,2198784

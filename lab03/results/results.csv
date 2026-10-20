@@ -1,0 +1,4 @@
+model,params,hand_flops,test_accuracy,latency_b1_ms,latency_b128_ms,latency_b128_per_image_ms
+MLP,235146,469504,0.8776,0.081,0.36,0.0028
+CNN,20490,2063488,0.8953,0.234,7.79,0.0609
+Attention,70794,2329856,0.8391,0.677,4.68,0.0365
