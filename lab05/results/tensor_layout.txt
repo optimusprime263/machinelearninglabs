@@ -1,0 +1,4 @@
+x                    shape (4096, 4096), dtype torch.float32, stride (4096, 1), contiguous True, shares memory with x: True
+x.t()                shape (4096, 4096), dtype torch.float32, stride (1, 4096), contiguous False, shares memory with x: True
+x.t().contiguous()   shape (4096, 4096), dtype torch.float32, stride (4096, 1), contiguous True, shares memory with x: False
+x.t().view(-1) fails: view size is not compatible with input tensor's size and stride (at least one dimension spans across two conti

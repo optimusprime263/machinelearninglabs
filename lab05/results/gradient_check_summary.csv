@@ -1,0 +1,2 @@
+output_engine,output_pytorch,max_diff_engine_pytorch,max_diff_engine_numerical,graph_nodes,accumulation_x_engine,accumulation_x_pytorch,accumulation_y_engine,accumulation_y_pytorch,accumulation_max_diff
+8.215245855751819,8.21524585575182,0.0,9.078211515856083e-10,81,22.0,22.0,-9.75,-9.75,0.0

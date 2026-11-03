@@ -61,3 +61,20 @@ python lab04/src/pipeline.py
 ```
 
 See `lab04/report.md` and `lab04/data_card.md`.
+
+## Lab 5: frameworks and automatic differentiation
+
+A scalar autograd engine (`lab05/src/engine.py`) checked against PyTorch
+autograd and numerical gradients, a 2-8-1 network trained on make_moons with
+both, and PyTorch graph inspection, eager vs traced timings and tensor
+contiguity. `torch.compile` is not available on Windows with PyTorch 2.3.1, so
+the comparison uses `torch.jit.trace`.
+
+```powershell
+python lab05/src/print_versions.py
+python lab05/src/lab5.py
+```
+
+The full run takes about 5 minutes, mostly the engine training (one run for the
+comparison, then one warm-up and 5 timed runs).
+See `lab05/report.md`.

@@ -1,0 +1,29 @@
+Autograd graph of BCE loss for the trained 2-8-1 model (4 test rows)
+
+BinaryCrossEntropyBackward0
+  SigmoidBackward0
+    AddmmBackward0
+      AccumulateGrad -> parameter (1,)
+      ReluBackward0
+        AddmmBackward0
+          AccumulateGrad -> parameter (8,)
+          TBackward0
+            AccumulateGrad -> parameter (8, 2)
+      TBackward0
+        AccumulateGrad -> parameter (1, 8)
+
+torch.fx graph of the model's forward pass:
+
+graph():
+    %input_1 : [num_users=1] = placeholder[target=input]
+    %_0 : [num_users=1] = call_module[target=0](args = (%input_1,), kwargs = {})
+    %_1 : [num_users=1] = call_module[target=1](args = (%_0,), kwargs = {})
+    %_2 : [num_users=1] = call_module[target=2](args = (%_1,), kwargs = {})
+    %_3 : [num_users=1] = call_module[target=3](args = (%_2,), kwargs = {})
+    return _3
+
+Parameters:
+  0.weight   shape (8, 2), dtype torch.float64, stride (2, 1), contiguous True
+  0.bias     shape (8,), dtype torch.float64, stride (1,), contiguous True
+  2.weight   shape (1, 8), dtype torch.float64, stride (8, 1), contiguous True
+  2.bias     shape (1,), dtype torch.float64, stride (1,), contiguous True

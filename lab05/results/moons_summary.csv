@@ -1,0 +1,2 @@
+train_rows,test_rows,engine_test_accuracy,pytorch_test_accuracy,engine_final_loss,pytorch_final_loss,max_loss_diff,max_param_diff,engine_train_seconds,pytorch_train_seconds,speed_ratio
+700,300,0.9966666666666667,0.9966666666666667,0.01243739295736087,0.01243739295736087,1.1102230246251565e-16,2.6645352591003757e-15,27.0779407,1.294872899999973,20.911659128861654
