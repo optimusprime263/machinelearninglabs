@@ -1,0 +1,4 @@
+model,test_accuracy,note
+logistic_regression,0.9415,ConvergenceWarning: hit max_iter=1000
+random_forest,0.9357,
+reference: StandardScaler + logistic_regression,0.9883,converged in 19 iterations

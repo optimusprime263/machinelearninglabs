@@ -1,0 +1,3 @@
+model,train_time_ms,inference_ms,size_bytes,size_kb,process_before_mb,peak_train_mb,peak_inference_mb,train_allocated_kb,inference_allocated_kb
+logistic_regression,573.65,0.1161,1055,1.0,104.9,105.0,105.0,67.3,1.7
+random_forest,263.68,4.8436,290889,284.1,106.3,106.3,106.3,224.4,12.9

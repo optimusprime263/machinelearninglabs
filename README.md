@@ -1,5 +1,18 @@
 # Machine learning labs
 
+## Lab 1: environment and first system measurements
+
+Logistic regression and random forest on Breast Cancer Wisconsin: test
+accuracy, training time, single-sample latency, model size and peak memory,
+and which device class (Cloud, Edge, Mobile, TinyML) each model fits.
+
+```powershell
+python lab01/src/print_versions.py
+python lab01/src/lab1.py
+```
+
+See `lab01/report.md`.
+
 ## Lab 2: neural network from scratch
 
 A NumPy implementation of a classifier for the scikit-learn digits dataset.

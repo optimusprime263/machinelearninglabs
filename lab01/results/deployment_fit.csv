@@ -1,0 +1,9 @@
+model,tier,memory_fits_smallest_device,memory_fits_largest_device,latency_ok,size_ok,fits
+logistic_regression,Cloud,True,True,True,True,True
+logistic_regression,Edge,True,True,True,True,True
+logistic_regression,Mobile,False,True,True,True,True
+logistic_regression,TinyML,False,False,True,True,False
+random_forest,Cloud,True,True,True,True,True
+random_forest,Edge,True,True,True,True,True
+random_forest,Mobile,False,True,True,True,True
+random_forest,TinyML,False,False,True,False,False
