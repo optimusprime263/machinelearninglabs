@@ -1,9 +1,3 @@
-"""Lab 3: MLP, CNN and attention on Fashion-MNIST, and what each one costs.
-
-Run from the repository root: python lab03/src/lab3.py
-Fashion-MNIST is downloaded to data/ if it is missing.
-Outputs go to lab03/results/.
-"""
 import copy
 import csv
 import random

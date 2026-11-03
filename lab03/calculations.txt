@@ -1,0 +1,72 @@
+Lab 3 - hand calculations
+
+Parameters
+
+A linear layer has in*out weights plus one bias per output.
+A conv layer has 3*3*in_channels*out_channels weights plus one bias per filter.
+
+MLP
+784 -> 256: 784*256 + 256 = 200960
+256 -> 128: 256*128 + 128 = 32896
+128 -> 10:  128*10 + 10   = 1290
+total 235146
+
+CNN
+conv1 (1 -> 16):  3*3*1*16 + 16  = 160
+conv2 (16 -> 32): 3*3*16*32 + 32 = 4640
+after two max pools the image is 28 -> 14 -> 7, so flatten gives 32*7*7 = 1568
+linear 1568 -> 10: 1568*10 + 10 = 15690
+total 20490
+
+Attention
+each patch is 7*7 = 49 pixels, there are 16 patches, d_model = 64
+embedding 49 -> 64: 49*64 + 64 = 3200
+one encoder layer:
+  Q, K, V together (64 -> 192): 64*192 + 192 = 12480
+  output projection:            64*64 + 64   = 4160
+  feed-forward 64 -> 128:       64*128 + 128 = 8320
+  feed-forward 128 -> 64:       128*64 + 64  = 8256
+  2 layer norms:                2*(64+64)    = 256
+  sum = 33472
+two layers: 66944
+head 64 -> 10: 64*10 + 10 = 650
+total 3200 + 66944 + 650 = 70794
+
+Same numbers as torchinfo.
+
+
+FLOPs for one image
+
+Every weight gives one multiply and one add, so 2 FLOPs.
+
+Linear 784 -> 256 (MLP):
+2*784*256 = 401408
+
+Conv 16 -> 32, output 14x14 (CNN):
+2*3*3*16*32*14*14
+9*16 = 144, 144*32 = 4608, 14*14 = 196
+4608*196 = 903168, times 2 = 1806336
+
+Attention, one encoder layer (16 patches, d = 64):
+QKV:          2*16*64*192 = 393216
+scores Q*K^T: 2*16*16*64  = 32768
+A*V:          2*16*16*64  = 32768
+output proj:  2*16*64*64  = 131072
+feed-forward: 2*16*64*128*2 = 524288
+layer total 1114112
+
+
+Whole models vs tools
+
+MLP:       401408 + 65536 + 2560 = 469504
+CNN:       225792 + 1806336 + 31360 = 2063488
+Attention: 100352 + 2*1114112 + 1280 = 2329856
+
+           by hand   thop x2   pytorch
+MLP        469504    469504    469504
+CNN        2063488   2063488   2063488
+Attention  2329856   101632    2198784
+
+thop counts MACs (multiply+add = 1 MAC), that's why I multiply it by 2.
+For attention thop doesn't see the encoder layers at all.
+PyTorch misses Q*K^T and A*V: 2 layers * 2 * 32768 = 131072.
