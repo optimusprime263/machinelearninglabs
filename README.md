@@ -44,3 +44,20 @@ python lab03/src/lab3.py
 
 Results, plots and the FLOP comparison are written to `lab03/results/`.
 See `lab03/report.md`.
+
+## Lab 4: data pipeline and quality
+
+A leakage-free pipeline for UCI Adult: ingestion, schema validation, cleaning
+fitted on the training set only, derived features, label-quality audit and a
+SHA256 of the processed data. Settings are in `lab04/config.yaml`. The raw and
+processed data go to `data/` (not committed).
+
+It needs the course environment from `requirements.txt` (pandas, scikit-learn,
+joblib, and PyYAML, which comes with it as a dependency). One command runs the
+whole pipeline:
+
+```powershell
+python lab04/src/pipeline.py
+```
+
+See `lab04/report.md` and `lab04/data_card.md`.

@@ -1,0 +1,15 @@
+Ingestion: 48842 rows, 15 columns (OpenML id 1590)
+Raw data SHA256: 8f970e20c9991979ec0a9ccb65ce97543d678709a2c6f8ef23f7fb32f40adddc
+Validation: duplicates / all: 52 (52 rows repeat an earlier row exactly (reported here; removed later from the training set only))
+Validation: dictionary / Husband but Female: 1 (1 rows: row ids [23390])
+Validation: dictionary / Wife but Male: 3 (3 rows: row ids [5661, 16856, 43422])
+Validation: 50 checks run, report in validation_report.md
+Split: train 34189 rows, test 14653 rows
+Duplicates: dropped 24 exact duplicates from train (34189 -> 34165); test untouched
+Leakage checks: 0 shared row ids; 24 test rows are exact copies of a train row (kept, the test set is not changed)
+LogisticRegression without derived features: accuracy 0.8540, F1 0.6601
+LogisticRegression with derived features: accuracy 0.8578, F1 0.6696
+Saved fitted preprocessor (with derived features) to preprocessor.joblib
+Label quality: 5 groups of identical features with conflicting labels (10 rows); 0 of 50 sampled rows break a dictionary rule
+Processed dataset: train (34165, 108), test (14653, 108), SHA256 9f7e9df55c31d69890114abdb6078fc295853647206a90b444d910dc159e7cf4
+Run record with config and hashes: run_record.yaml

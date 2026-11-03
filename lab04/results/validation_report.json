@@ -1,0 +1,302 @@
+[
+  {
+    "check": "columns",
+    "column": "all",
+    "violations": 0,
+    "detail": "15 columns; missing none; extra none"
+  },
+  {
+    "check": "type",
+    "column": "age",
+    "violations": 0,
+    "detail": "expected int, found int64"
+  },
+  {
+    "check": "type",
+    "column": "workclass",
+    "violations": 0,
+    "detail": "expected category, found category"
+  },
+  {
+    "check": "type",
+    "column": "fnlwgt",
+    "violations": 0,
+    "detail": "expected int, found int64"
+  },
+  {
+    "check": "type",
+    "column": "education",
+    "violations": 0,
+    "detail": "expected category, found category"
+  },
+  {
+    "check": "type",
+    "column": "education-num",
+    "violations": 0,
+    "detail": "expected int, found int64"
+  },
+  {
+    "check": "type",
+    "column": "marital-status",
+    "violations": 0,
+    "detail": "expected category, found category"
+  },
+  {
+    "check": "type",
+    "column": "occupation",
+    "violations": 0,
+    "detail": "expected category, found category"
+  },
+  {
+    "check": "type",
+    "column": "relationship",
+    "violations": 0,
+    "detail": "expected category, found category"
+  },
+  {
+    "check": "type",
+    "column": "race",
+    "violations": 0,
+    "detail": "expected category, found category"
+  },
+  {
+    "check": "type",
+    "column": "sex",
+    "violations": 0,
+    "detail": "expected category, found category"
+  },
+  {
+    "check": "type",
+    "column": "capital-gain",
+    "violations": 0,
+    "detail": "expected int, found int64"
+  },
+  {
+    "check": "type",
+    "column": "capital-loss",
+    "violations": 0,
+    "detail": "expected int, found int64"
+  },
+  {
+    "check": "type",
+    "column": "hours-per-week",
+    "violations": 0,
+    "detail": "expected int, found int64"
+  },
+  {
+    "check": "type",
+    "column": "native-country",
+    "violations": 0,
+    "detail": "expected category, found category"
+  },
+  {
+    "check": "type",
+    "column": "income",
+    "violations": 0,
+    "detail": "expected category, found category"
+  },
+  {
+    "check": "missing",
+    "column": "age",
+    "violations": 0,
+    "detail": "0 empty + 0 '?'"
+  },
+  {
+    "check": "missing",
+    "column": "workclass",
+    "violations": 0,
+    "detail": "2799 empty + 0 '?'"
+  },
+  {
+    "check": "missing",
+    "column": "fnlwgt",
+    "violations": 0,
+    "detail": "0 empty + 0 '?'"
+  },
+  {
+    "check": "missing",
+    "column": "education",
+    "violations": 0,
+    "detail": "0 empty + 0 '?'"
+  },
+  {
+    "check": "missing",
+    "column": "education-num",
+    "violations": 0,
+    "detail": "0 empty + 0 '?'"
+  },
+  {
+    "check": "missing",
+    "column": "marital-status",
+    "violations": 0,
+    "detail": "0 empty + 0 '?'"
+  },
+  {
+    "check": "missing",
+    "column": "occupation",
+    "violations": 0,
+    "detail": "2809 empty + 0 '?'"
+  },
+  {
+    "check": "missing",
+    "column": "relationship",
+    "violations": 0,
+    "detail": "0 empty + 0 '?'"
+  },
+  {
+    "check": "missing",
+    "column": "race",
+    "violations": 0,
+    "detail": "0 empty + 0 '?'"
+  },
+  {
+    "check": "missing",
+    "column": "sex",
+    "violations": 0,
+    "detail": "0 empty + 0 '?'"
+  },
+  {
+    "check": "missing",
+    "column": "capital-gain",
+    "violations": 0,
+    "detail": "0 empty + 0 '?'"
+  },
+  {
+    "check": "missing",
+    "column": "capital-loss",
+    "violations": 0,
+    "detail": "0 empty + 0 '?'"
+  },
+  {
+    "check": "missing",
+    "column": "hours-per-week",
+    "violations": 0,
+    "detail": "0 empty + 0 '?'"
+  },
+  {
+    "check": "missing",
+    "column": "native-country",
+    "violations": 0,
+    "detail": "857 empty + 0 '?'"
+  },
+  {
+    "check": "missing",
+    "column": "income",
+    "violations": 0,
+    "detail": "0 empty + 0 '?'"
+  },
+  {
+    "check": "range",
+    "column": "age",
+    "violations": 0,
+    "detail": "allowed 17-90, found 17-90; 0 below, 0 above"
+  },
+  {
+    "check": "range",
+    "column": "hours-per-week",
+    "violations": 0,
+    "detail": "allowed 1-99, found 1-99; 0 below, 0 above"
+  },
+  {
+    "check": "range",
+    "column": "capital-gain",
+    "violations": 0,
+    "detail": "allowed 0-99999, found 0-99999; 0 below, 0 above"
+  },
+  {
+    "check": "range",
+    "column": "capital-loss",
+    "violations": 0,
+    "detail": "allowed 0-4356, found 0-4356; 0 below, 0 above"
+  },
+  {
+    "check": "category",
+    "column": "workclass",
+    "violations": 0,
+    "detail": "8 allowed values"
+  },
+  {
+    "check": "category",
+    "column": "education",
+    "violations": 0,
+    "detail": "16 allowed values"
+  },
+  {
+    "check": "category",
+    "column": "marital-status",
+    "violations": 0,
+    "detail": "7 allowed values"
+  },
+  {
+    "check": "category",
+    "column": "occupation",
+    "violations": 0,
+    "detail": "14 allowed values"
+  },
+  {
+    "check": "category",
+    "column": "relationship",
+    "violations": 0,
+    "detail": "6 allowed values"
+  },
+  {
+    "check": "category",
+    "column": "race",
+    "violations": 0,
+    "detail": "5 allowed values"
+  },
+  {
+    "check": "category",
+    "column": "sex",
+    "violations": 0,
+    "detail": "2 allowed values"
+  },
+  {
+    "check": "category",
+    "column": "native-country",
+    "violations": 0,
+    "detail": "41 allowed values"
+  },
+  {
+    "check": "category",
+    "column": "income",
+    "violations": 0,
+    "detail": "2 allowed values"
+  },
+  {
+    "check": "duplicates",
+    "column": "all",
+    "violations": 52,
+    "detail": "52 rows repeat an earlier row exactly (reported here; removed later from the training set only)"
+  },
+  {
+    "check": "dictionary",
+    "column": "education-num does not match education",
+    "violations": 0,
+    "detail": "0 rows"
+  },
+  {
+    "check": "dictionary",
+    "column": "Husband but Female",
+    "violations": 1,
+    "detail": "1 rows: row ids [23390]"
+  },
+  {
+    "check": "dictionary",
+    "column": "Wife but Male",
+    "violations": 3,
+    "detail": "3 rows: row ids [5661, 16856, 43422]"
+  },
+  {
+    "check": "dictionary",
+    "column": "Husband/Wife but not married",
+    "violations": 0,
+    "detail": "0 rows"
+  },
+  {
+    "check": "label",
+    "column": "income",
+    "violations": 0,
+    "detail": "<=50K: 37155, >50K: 11687"
+  }
+]

@@ -1,0 +1,224 @@
+config:
+  seed: 42
+  data:
+    openml_name: adult
+    openml_version: 2
+    data_home: data
+    expected_rows: 48842
+    expected_columns: 15
+    raw_label_column: class
+    label_column: income
+    positive_label: '>50K'
+  schema:
+    types:
+      age: int
+      workclass: category
+      fnlwgt: int
+      education: category
+      education-num: int
+      marital-status: category
+      occupation: category
+      relationship: category
+      race: category
+      sex: category
+      capital-gain: int
+      capital-loss: int
+      hours-per-week: int
+      native-country: category
+      income: category
+    ranges:
+      age:
+      - 17
+      - 90
+      hours-per-week:
+      - 1
+      - 99
+      capital-gain:
+      - 0
+      - 99999
+      capital-loss:
+      - 0
+      - 4356
+    missing_marker: '?'
+    categories:
+      workclass:
+      - Private
+      - Self-emp-not-inc
+      - Self-emp-inc
+      - Federal-gov
+      - Local-gov
+      - State-gov
+      - Without-pay
+      - Never-worked
+      education:
+      - Bachelors
+      - Some-college
+      - 11th
+      - HS-grad
+      - Prof-school
+      - Assoc-acdm
+      - Assoc-voc
+      - 9th
+      - 7th-8th
+      - 12th
+      - Masters
+      - 1st-4th
+      - 10th
+      - Doctorate
+      - 5th-6th
+      - Preschool
+      marital-status:
+      - Married-civ-spouse
+      - Divorced
+      - Never-married
+      - Separated
+      - Widowed
+      - Married-spouse-absent
+      - Married-AF-spouse
+      occupation:
+      - Tech-support
+      - Craft-repair
+      - Other-service
+      - Sales
+      - Exec-managerial
+      - Prof-specialty
+      - Handlers-cleaners
+      - Machine-op-inspct
+      - Adm-clerical
+      - Farming-fishing
+      - Transport-moving
+      - Priv-house-serv
+      - Protective-serv
+      - Armed-Forces
+      relationship:
+      - Wife
+      - Own-child
+      - Husband
+      - Not-in-family
+      - Other-relative
+      - Unmarried
+      race:
+      - White
+      - Asian-Pac-Islander
+      - Amer-Indian-Eskimo
+      - Other
+      - Black
+      sex:
+      - Female
+      - Male
+      native-country:
+      - United-States
+      - Cambodia
+      - England
+      - Puerto-Rico
+      - Canada
+      - Germany
+      - Outlying-US(Guam-USVI-etc)
+      - India
+      - Japan
+      - Greece
+      - South
+      - China
+      - Cuba
+      - Iran
+      - Honduras
+      - Philippines
+      - Italy
+      - Poland
+      - Jamaica
+      - Vietnam
+      - Mexico
+      - Portugal
+      - Ireland
+      - France
+      - Dominican-Republic
+      - Laos
+      - Ecuador
+      - Taiwan
+      - Haiti
+      - Columbia
+      - Hungary
+      - Guatemala
+      - Nicaragua
+      - Scotland
+      - Thailand
+      - Yugoslavia
+      - El-Salvador
+      - Trinadad&Tobago
+      - Peru
+      - Hong
+      - Holand-Netherlands
+      income:
+      - <=50K
+      - '>50K'
+    education_codes:
+      Preschool: 1
+      1st-4th: 2
+      5th-6th: 3
+      7th-8th: 4
+      9th: 5
+      10th: 6
+      11th: 7
+      12th: 8
+      HS-grad: 9
+      Some-college: 10
+      Assoc-voc: 11
+      Assoc-acdm: 12
+      Bachelors: 13
+      Masters: 14
+      Prof-school: 15
+      Doctorate: 16
+  split:
+    test_size: 0.3
+  cleaning:
+    numeric_imputation: median
+    categorical_imputation: most_frequent
+    clip_percentiles:
+    - 1
+    - 99
+    drop_train_duplicates: true
+  features:
+    derived:
+    - capital_net
+    - hours_per_age
+  model:
+    max_iter: 1000
+  label_quality:
+    sample_size: 50
+  outputs:
+    processed_dir: data/processed
+    results_dir: lab04/results
+rows:
+  raw: 48842
+  train_after_split: 34189
+  train_after_dedup: 34165
+  test: 14653
+hashes:
+  raw_sha256: 8f970e20c9991979ec0a9ccb65ce97543d678709a2c6f8ef23f7fb32f40adddc
+  processed_sha256: 9f7e9df55c31d69890114abdb6078fc295853647206a90b444d910dc159e7cf4
+  processed_train_sha256: 826fe5d8bc651c3d7aabe883b8c62f740f26580b69c301596aaabafaec41d197
+  processed_test_sha256: 86b443d3ce8b757290ebb0619e5733ca99c2b380b1d3295498c8ac489eeec47b
+processed_columns: 108
+leakage_checks:
+  shared_row_ids: 0
+  test_rows_identical_to_a_train_row: 24
+  preprocessor_fitted_on_rows: 34165
+  test_unchanged: true
+label_quality:
+  conflict_groups: 5
+  conflict_rows: 10
+  sample_rows_with_issues: 0
+baseline:
+- features: without derived features
+  n_columns: 105
+  accuracy: 0.854
+  f1: 0.6601
+- features: with derived features
+  n_columns: 107
+  accuracy: 0.8578
+  f1: 0.6696
+versions:
+  python: 3.11.8
+  numpy: 1.26.4
+  pandas: 2.2.2
+  scikit-learn: 1.5.0
