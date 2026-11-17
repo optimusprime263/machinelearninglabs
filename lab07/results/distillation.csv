@@ -1,0 +1,4 @@
+model,parameters,test_accuracy,dense_kb,latency_b1_ms,latency_b128_ms,train_seconds
+teacher (baseline),1025866,0.911,4009.8,0.4942,18.58,211.7
+student without teacher,105866,0.8965,416.0,0.2652,8.045,99.2
+student with distillation,105866,0.8983,416.0,0.2629,7.589,138.4

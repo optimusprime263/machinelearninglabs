@@ -91,3 +91,18 @@ python lab05/src/lab5.py
 The full run takes about 5 minutes, mostly the engine training (one run for the
 comparison, then one warm-up and 5 timed runs).
 See `lab05/report.md`.
+
+## Lab 7: compression: pruning and distillation
+
+An oversized CNN (1.03M parameters) on Fashion-MNIST compressed with global,
+layer-wise and structured magnitude pruning, and a 106k-parameter student trained
+with and without knowledge distillation (T=4, alpha=0.5). Compares accuracy,
+size (dense and sparse formats), latency, FLOPs and estimated energy.
+
+```powershell
+python lab07/src/print_versions.py
+python lab07/src/lab7.py
+```
+
+A full run takes about 40 minutes on a laptop CPU. Trained weights are cached in
+`data/lab07/` (not committed); `--fresh` retrains everything. See `lab07/report.md`.
