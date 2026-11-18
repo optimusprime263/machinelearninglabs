@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/slobo/Desktop/ml-labs/lab06/mlruns/869931246456461964/b094882936f24ab8b83b22173e9243de/artifacts
+end_time: 1794962146893
+entry_point_name: ''
+experiment_id: '869931246456461964'
+lifecycle_stage: active
+run_id: b094882936f24ab8b83b22173e9243de
+run_name: accum_64x4
+run_uuid: b094882936f24ab8b83b22173e9243de
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1794962051968
+status: 3
+tags: []
+user_id: slobo

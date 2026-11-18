@@ -1,0 +1,7 @@
+optimizer,start_lr,scheduler,best_val_accuracy,final_val_accuracy,final_lr,test_accuracy
+SGD + momentum 0.9,0.05,step,0.9138,0.9124,0.0005000000000000001,0.9128
+SGD + momentum 0.9,0.05,cosine,0.9156,0.9156,0.001223587092621162,0.915
+SGD + momentum 0.9,0.05,plateau,0.9168,0.9148,0.005000000000000001,0.9148
+Adam,0.001,step,0.9056,0.9028,1e-05,0.8983
+Adam,0.001,cosine,0.9088,0.9062,2.4471741852423235e-05,0.9019
+Adam,0.001,plateau,0.9078,0.902,0.001,0.8988

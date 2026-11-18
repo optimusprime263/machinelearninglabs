@@ -1,0 +1,32 @@
+# Lab 6 training pipeline: one config object drives a run.
+# Experiments override single keys, e.g.  --set train.lr=0.05
+seed: 42
+run_name: main
+
+data:
+  root: data                  # Fashion-MNIST is downloaded here (not committed)
+  val_size: 5000              # taken from the official 60k training set
+  batch_size: 128
+  num_workers: 0
+
+model:
+  name: cnn                   # best Lab 3 model: 89.53 % test accuracy, 20,490 parameters
+
+train:
+  epochs: 5
+  optimizer: adam             # adam | sgd (with momentum)
+  lr: 0.001
+  momentum: 0.9               # used by sgd only
+  scheduler: none             # none | step | cosine | plateau
+  step_size: 4                # step: lr x gamma every step_size epochs
+  gamma: 0.1                  # step and plateau factor
+  plateau_patience: 1         # plateau: epochs without val-loss improvement
+  accumulation_steps: 1       # gradient accumulation (effective batch = batch_size x steps)
+  measure_memory: false       # sample peak RSS during training
+
+checkpoint:
+  dir: data/lab06/checkpoints # one folder per run, saved after every epoch (not committed)
+
+mlflow:
+  tracking_dir: lab06/mlruns
+  experiment: lab06-training-pipeline

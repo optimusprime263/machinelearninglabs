@@ -1,0 +1,6 @@
+phase,profiler_seconds,profiler_share,wall_clock_seconds,wall_clock_share
+data_loading,13.6,0.6233,13.61,0.6224
+forward,3.32,0.1522,3.33,0.1524
+backward,4.24,0.1942,4.25,0.1945
+optimizer_step,0.66,0.0303,0.67,0.0307
+whole epoch (with profiler),,,21.88,

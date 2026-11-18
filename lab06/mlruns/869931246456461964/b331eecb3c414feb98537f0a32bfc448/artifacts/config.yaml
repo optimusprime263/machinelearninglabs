@@ -1,0 +1,25 @@
+seed: 42
+run_name: adam_step
+data:
+  root: data
+  val_size: 5000
+  batch_size: 128
+  num_workers: 0
+model:
+  name: cnn
+train:
+  epochs: 10
+  optimizer: adam
+  lr: 0.001
+  momentum: 0.9
+  scheduler: step
+  step_size: 4
+  gamma: 0.1
+  plateau_patience: 1
+  accumulation_steps: 1
+  measure_memory: false
+checkpoint:
+  dir: data/lab06/checkpoints
+mlflow:
+  tracking_dir: lab06/mlruns
+  experiment: lab06-training-pipeline

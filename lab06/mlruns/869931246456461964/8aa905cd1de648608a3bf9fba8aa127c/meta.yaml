@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/slobo/Desktop/ml-labs/lab06/mlruns/869931246456461964/8aa905cd1de648608a3bf9fba8aa127c/artifacts
+end_time: 1794961162693
+entry_point_name: ''
+experiment_id: '869931246456461964'
+lifecycle_stage: active
+run_id: 8aa905cd1de648608a3bf9fba8aa127c
+run_name: sgd_cosine
+run_uuid: 8aa905cd1de648608a3bf9fba8aa127c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1794960977941
+status: 3
+tags: []
+user_id: slobo

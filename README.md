@@ -92,6 +92,23 @@ The full run takes about 5 minutes, mostly the engine training (one run for the
 comparison, then one warm-up and 5 timed runs).
 See `lab05/report.md`.
 
+## Lab 6: training pipelines and project proposal
+
+The Lab 3 CNN trained by one YAML-driven script with seed, per-epoch checkpoints
+(exact resume) and MLflow tracking, plus studies of profiling, num_workers, batch
+size, optimizers and learning-rate schedules, and gradient accumulation. The
+individual project proposal is `lab06/proposal.md`.
+
+```powershell
+python lab06/src/train.py --config lab06/config.yaml
+python lab06/src/experiments.py
+mlflow ui --backend-store-uri lab06/mlruns
+```
+
+`experiments.py` runs all studies (about 50 minutes on a laptop CPU) and skips
+the ones whose results already exist; `--fresh` starts again. Checkpoints go to
+`data/lab06/` (not committed). See `lab06/report.md`.
+
 ## Lab 7: compression: pruning and distillation
 
 An oversized CNN (1.03M parameters) on Fashion-MNIST compressed with global,

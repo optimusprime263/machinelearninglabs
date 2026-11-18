@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/slobo/Desktop/ml-labs/lab06/mlruns/869931246456461964/b8485c3643ef4bc2a2be70e5ec2490c8/artifacts
+end_time: 1794961942166
+entry_point_name: ''
+experiment_id: '869931246456461964'
+lifecycle_stage: active
+run_id: b8485c3643ef4bc2a2be70e5ec2490c8
+run_name: adam_plateau
+run_uuid: b8485c3643ef4bc2a2be70e5ec2490c8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1794961752154
+status: 3
+tags: []
+user_id: slobo
