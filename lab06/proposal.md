@@ -18,7 +18,8 @@ Knowledge-Informed Self-Supervised Representations for Workout Form
 Assessment", ECCV 2022).
 
 - Unscripted gym videos from YouTube and Instagram, with many people and
-  camera angles; one sample is one repetition.
+  camera angles; one sample is one repetition (about 21,300 samples, 4.1 s on
+  average, according to a 2025 survey of action quality assessment).
 - Errors were labelled by two professional trainers:
   - squat: knees inward, knees forward, shallow depth;
   - overhead press: elbows, knees;
@@ -26,6 +27,8 @@ Assessment", ECCV 2022).
 - **Licence:** CC BY-NC 4.0. Study use only; no redistribution (the data
   stays on my computer, not on GitHub); faces blurred in anything shown.
   Access is by request through the authors' form.
+- **Known biases:** only people who post their training online; far fewer
+  erroneous than correct repetitions.
 
 **Start and second source: Squat Dataset** (Teng, Zenodo 2025, DOI
 10.5281/zenodo.17558630, CC BY 4.0).
@@ -41,10 +44,10 @@ labelled by me, with no other people in the frame.
 
 ## Approach
 
-1. **Pose first.** A small pretrained pose estimator turns each frame into
-   body keypoints (shoulders, hips, knees and so on). The classifier works on
-   these, not on raw pixels, so clothes and background do not matter and
-   no faces are stored.
+1. **Pose first.** A light pretrained pose model (MediaPipe Pose Landmarker
+   Lite or MoveNet Lightning) turns each frame into body keypoints. The
+   classifier works on these, not on pixels, so clothes and background do
+   not matter and no faces are stored.
 2. **Error classifier.** A small network over the keypoints of one
    repetition (a 1D CNN over time), one output per error type. The Squat
    Dataset has single photos, so there it classifies the keypoints of one
@@ -61,8 +64,7 @@ labelled by me, with no other people in the frame.
   0.87 for shallow squat and 0.53 for knees inward). The goal is to come
   close to it with a model small enough for a phone.
 - **Squat Dataset:** macro-F1 on its official test split.
-- **Own videos:** errors caught on my repetitions, as a small real-world
-  test.
+- **Own videos:** errors caught on my repetitions.
 
 ## Deployment constraints
 
@@ -84,10 +86,10 @@ labelled by me, with no other people in the frame.
 
 - **Fitness-AQA access may be slow or refused.** The project then runs on
   the Squat Dataset plus my own videos.
-- **Few people in the Squat Dataset.** Mitigation: report results per person
-  where possible, and test on my own videos.
-- **The pretrained pose model may use most of the 5 MB.** Mitigation: choose
-  the smallest pose model that is accurate enough, and quantize it too.
+- **Few people in the Squat Dataset.** Mitigation: test on my own videos.
+- **The 5 MB budget is tight:** the light pose models are about 3 to 5 MB on
+  their own. Mitigation: the classifier must stay well under 1 MB after INT8;
+  sizes of both parts are reported separately.
 - **The pose estimator fails when plates or racks hide the body.**
   Mitigation: measure how often this happens, and report results with and
   without such frames.
