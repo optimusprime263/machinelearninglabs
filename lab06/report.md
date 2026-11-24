@@ -198,13 +198,15 @@ random-number states, including the generator that shuffles the data.
 
 ### Project proposal
 
-`proposal.md`, one page: traffic-sign recognition that runs offline in the
-browser, on GTSRB (43 classes of real traffic-sign photos). This is not the
-course's default dataset, so it needs approval. Target: at least 97 %
-accuracy with macro-F1, latency ≤ 50 ms, size ≤ 5 MB. Plan: structured
-pruning plus INT8 quantization, then export to ONNX and a browser demo with
-ONNX Runtime Web; distillation is the fallback. If the dataset is not
-approved, the same plan runs on Fashion-MNIST.
+`proposal.md`, one page, revised after feedback in class (the first idea,
+traffic signs on GTSRB, was too generic). The new project is an AI technique
+coach: it checks the squat, overhead press and barbell row from video and
+names errors such as "knees inward". The main data is Fitness-AQA (gym
+videos labelled by professional trainers, CC BY-NC 4.0); the project starts
+with the public Squat Dataset from Zenodo (CC BY 4.0). Pose keypoints feed a
+small classifier, which is then compressed with pruning and INT8
+quantization. Metric: F1 per error type. Constraints: latency ≤ 50 ms and
+size ≤ 5 MB.
 
 ## Three conclusions
 
